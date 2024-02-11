@@ -1,0 +1,44 @@
+{
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "name": "Sign Language Translator",
+    "description": "A Virtual Instructor to convert audio and video into its corresponding sign language",
+    "action": {
+        "default_popup": "js/index.html",
+        "default_title": "Your Sign Language Interpreter"
+    },
+    "content_security_policy": {
+        "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
+    },
+
+    "icons": 
+        {
+          "48": "js/sign.png"
+        },
+    "background": {
+        "service_worker": "js/background.js"
+    },
+    "permissions": [
+        "storage",
+        "tabs"
+    ],
+    "host_permissions": [
+        "https://*.youtube.com/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://*.youtube.com/*"],
+            "js":["js/contentScript.js"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "js/sign.png",
+                "icon.svg",
+                "sl.png"
+            ],
+            "matches": ["https://*.youtube.com/*"]
+        }
+    ]
+}
