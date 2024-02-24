@@ -7,13 +7,13 @@ import { OrbitControls } from '@react-three/drei'
 function Home() {
   const adjustInstructorForScreenSize= () => {
     let screenScale = [70,70,70];
-    let screenPosition = [0,0,0]
-    let rotation=[0,0,0]
+    let screenPosition = [10,10,10]
+    let rotation=[-0.12,-0.2,0]
 
     if(window.innerWidth < 768)
     {
-      screenScale=[25,25,25];
-      screenPosition=[0,-50,-50];
+      screenScale=[45,45,45];
+      screenPosition=[0,-70,-50];
     }
     else
     {

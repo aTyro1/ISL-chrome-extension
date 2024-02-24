@@ -21,7 +21,6 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.message == 'buttonClicked') {
     chrome.windows.create({
       url: "js/index.html",
-      type: 'popup',
       focused: true,
       width: 480,
       height: 480,
